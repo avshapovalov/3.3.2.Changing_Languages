@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Homework 3.3.2.Change Language</string>
+    <string name="change_language_ru">Сменить язык</string>
+    <string name="text">съешь ещё этих мягких французских булок, да выпей чаю</string>
+    <string-array name="languages">
+        <item>Русский</item>
+        <item>Английский</item>
+    </string-array>
+
+</resources>
