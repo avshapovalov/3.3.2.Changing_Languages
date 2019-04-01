@@ -21,7 +21,7 @@
             app:layout_constraintTop_toTopOf="parent"/>
 
         <Spinner
-            android:id="@+id/mySpinner"
+            android:id="@+id/myLanguageSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/textExample"/>
@@ -31,7 +31,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/change_language_ru"
-            app:layout_constraintTop_toBottomOf="@id/mySpinner"/>
+            app:layout_constraintTop_toBottomOf="@id/myLanguageSpinner"/>
+
+        <Spinner
+            android:id="@+id/myColorSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_ChangeLanguage"/>
+
+        <Button
+            android:id="@+id/btn_ChangeColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/change_color"
+            app:layout_constraintTop_toBottomOf="@id/myColorSpinner"/>
 
     </android.support.constraint.ConstraintLayout>
 
