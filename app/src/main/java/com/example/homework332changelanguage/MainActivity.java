@@ -13,10 +13,10 @@ import android.widget.TextView;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    String selectedLanguage, selectedColor;
+    String selectedLanguage, selectedColor, selectedMargin;
     Button btnChangeLanguage;
     TextView textView;
-    Spinner spinner, colorSpinner;
+    Spinner spinner, colorSpinner, marginSpinner;
 
     public void changeLanguage(String selectedLanguage) {
         if (selectedLanguage.equals("English")) {
@@ -49,7 +49,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Utils.onActivityCreateSetTheme(this);
         setContentView(R.layout.activity_main);
+
 
         ArrayAdapter<?> adapterLanguage = ArrayAdapter.createFromResource(this, R.array.languages, android.R.layout.simple_spinner_item);
         adapterLanguage.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -61,13 +63,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         colorSpinner = (Spinner) findViewById(R.id.myColorSpinner);
         colorSpinner.setAdapter(adapterColor);
 
+        ArrayAdapter<?> adapterMargin = ArrayAdapter.createFromResource(this, R.array.margins, android.R.layout.simple_spinner_item);
+        adapterMargin.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        marginSpinner = (Spinner) findViewById(R.id.myMarginSpinner);
+        marginSpinner.setAdapter(adapterMargin);
+
         findViewById(R.id.btn_ChangeLanguage).setOnClickListener(this);
         findViewById(R.id.btn_ChangeColor).setOnClickListener(this);
+        findViewById(R.id.btn_ChangeMargin).setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        // TODO Auto-generated method stub
         switch (v.getId()) {
 
             case R.id.btn_ChangeLanguage:
@@ -78,14 +85,48 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_ChangeColor:
                 colorSpinner = (Spinner) findViewById(R.id.myColorSpinner);
                 selectedColor = colorSpinner.getSelectedItem().toString();
-                if (selectedColor.equals("Синий") || selectedColor.equals("Blue")) {
-                    setTheme(R.style.BlueTheme);
-                    MainActivity.this.recreate();
-                    break;
-                } else if (selectedColor.equals("Зеленый") || selectedColor.equals("Green")) {
-                    Utils.changeToTheme(this, Utils.GREEN);
-                } else if (selectedColor.equals("Черный") || selectedColor.equals("Black")) {
-                    Utils.changeToTheme(this, Utils.BLACK);
+                switch (selectedColor){
+                    case "Black":
+                        Utils.changeToTheme(this, Utils.THEME_BLACK);
+                        break;
+                    case "Черный":
+                        Utils.changeToTheme(this, Utils.THEME_BLACK);
+                        break;
+                    case "Синий":
+                        Utils.changeToTheme(this, Utils.THEME_BLUE);
+                        break;
+                    case "Blue":
+                        Utils.changeToTheme(this, Utils.THEME_BLUE);
+                        break;
+                    case "Green":
+                        Utils.changeToTheme(this, Utils.THEME_GREEN);
+                        break;
+                    case "Зеленый":
+                        Utils.changeToTheme(this, Utils.THEME_GREEN);
+                        break;
+                }
+            case R.id.btn_ChangeMargin:
+                marginSpinner = (Spinner) findViewById(R.id.myMarginSpinner);
+                selectedMargin = marginSpinner.getSelectedItem().toString();
+                switch (selectedMargin){
+                    case "Крупная":
+                        Utils.changeToTheme(this, Utils.THEME_BIG);
+                        break;
+                    case "Big":
+                        Utils.changeToTheme(this, Utils.THEME_BIG);
+                        break;
+                    case "Средняя":
+                        Utils.changeToTheme(this, Utils.THEME_MEDIUM);
+                        break;
+                    case "Medium":
+                        Utils.changeToTheme(this, Utils.THEME_MEDIUM);
+                        break;
+                    case "Мелкая":
+                        Utils.changeToTheme(this, Utils.THEME_SMALL);
+                        break;
+                    case "Small":
+                        Utils.changeToTheme(this, Utils.THEME_SMALL);
+                        break;
                 }
         }
     }

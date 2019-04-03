@@ -46,6 +46,19 @@
             android:text="@string/change_color"
             app:layout_constraintTop_toBottomOf="@id/myColorSpinner"/>
 
+        <Spinner
+            android:id="@+id/myMarginSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_ChangeColor"/>
+
+        <Button
+            android:id="@+id/btn_ChangeMargin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/change_margins"
+            app:layout_constraintTop_toBottomOf="@id/myMarginSpinner"/>
+
     </android.support.constraint.ConstraintLayout>
 
 

@@ -6,11 +6,12 @@ import android.content.Intent;
 public class Utils
 {
     private static int sTheme;
-
-    public final static int BLACK = 0;
-    public final static int BLUE = 1;
-    public final static int GREEN = 2;
-
+    public final static int THEME_GREEN = 0;
+    public final static int THEME_BLACK = 1;
+    public final static int THEME_BLUE = 2;
+    public final static int THEME_BIG = 3;
+    public final static int THEME_MEDIUM = 4;
+    public final static int THEME_SMALL = 5;
     /**
      * Set the theme of the Activity, and restart it by creating a new Activity of the same type.
      */
@@ -18,25 +19,31 @@ public class Utils
     {
         sTheme = theme;
         activity.finish();
-
         activity.startActivity(new Intent(activity, activity.getClass()));
-
     }
-
     /** Set the theme of the activity, according to the configuration. */
     public static void onActivityCreateSetTheme(Activity activity)
     {
         switch (sTheme)
         {
             default:
-            case BLACK:
-                activity.setTheme(R.style.BlackTheme);
+            case THEME_GREEN:
+                activity.setTheme(R.style.FirstTheme);
                 break;
-            case BLUE:
-                activity.setTheme(R.style.BlueTheme);
+            case THEME_BLACK:
+                activity.setTheme(R.style.SecondTheme);
                 break;
-            case GREEN:
-                activity.setTheme(R.style.GreenTheme);
+            case THEME_BLUE:
+                activity.setTheme(R.style.ThirdTheme);
+                break;
+            case THEME_BIG:
+                activity.setTheme(R.style.Margin1);
+                break;
+            case THEME_MEDIUM:
+                activity.setTheme(R.style.Margin2);
+                break;
+            case THEME_SMALL:
+                activity.setTheme(R.style.Margin3);
                 break;
         }
     }

@@ -3,6 +3,7 @@
     <string name="change_language_ru">Сменить язык</string>
     <string name="text">съешь ещё этих мягких французских булок, да выпей чаю</string>
     <string name="change_color">Поменять цвет</string>
+    <string name="change_margins">Поменять отступы</string>
     <string-array name="languages">
         <item>Русский</item>
         <item>Английский</item>
@@ -14,5 +15,10 @@
         <item>Зеленый</item>
     </string-array>
 
+    <string-array name="margins">
+        <item>Крупная</item>
+        <item>Средняя</item>
+        <item>Мелкая</item>
+    </string-array>
 
 </resources>

@@ -4,6 +4,7 @@
     <string name="change_language_ru">Change language</string>
     <string name="text">eat some more of these soft french buns and drink some tea</string>
     <string name="change_color">Сhange color</string>
+    <string name="change_margins">Change margins</string>
     <string-array name="languages">
         <item>Russian</item>
         <item>English</item>
@@ -14,4 +15,11 @@
         <item>Blue</item>
         <item>Green</item>
     </string-array>
+
+    <string-array name="margins">
+        <item>Big</item>
+        <item>Medium</item>
+        <item>Small</item>
+    </string-array>
+
 </resources>
