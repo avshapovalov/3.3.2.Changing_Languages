@@ -1,21 +1,16 @@
 package com.example.homework332changelanguage;
 
-import android.app.Activity;
 import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     String selectedLanguage, selectedColor, selectedMargin;
-    Button btnChangeLanguage;
-    TextView textView;
     Spinner spinner, colorSpinner, marginSpinner;
 
     public void changeLanguage(String selectedLanguage) {
